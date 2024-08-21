@@ -9,6 +9,8 @@ const staffRoutes = require("./routes/staff");
 const menuRoutes = require("./routes/menu");
 const orderRoutes = require("./routes/order");
 const paymentRoutes = require("./routes/payment");
+const orderListRoutes = require("./routes/orderlist");
+const rnrRoutes = require("./routes/rnr");
 
 // Middleware
 app.use(express.json());
@@ -20,9 +22,11 @@ app.use("/staff", staffRoutes);
 app.use("/menu", menuRoutes);
 app.use("/order", orderRoutes);
 app.use("/payment", paymentRoutes);
+app.use("/orderlists", orderListRoutes);
+app.use("/rnr", rnrRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send("Welcome to the DOS");
 });
 
 // Error handling middleware
